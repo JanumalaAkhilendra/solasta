@@ -1,6 +1,7 @@
-*{
+* {
     scroll-behavior: smooth;
 }
+
 /* This styles the 3D object inserted in the aside container */
 model-viewer {
     /* position: absolute; */
@@ -9,29 +10,31 @@ model-viewer {
     border: none;
 }
 
-.body{
-    background: url(./static/stars.png) repeat-y,linear-gradient(180.26deg,#061627 -7.57%,#3d1d3c 143.75%);;
+.body {
+    background: url(./static/stars.png) repeat-y, linear-gradient(180.26deg, #061627 -7.57%, #3d1d3c 143.75%);
+    ;
 }
-.aside{
+
+.aside {
     height: 100vh;
     width: 99vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image:url(./static/2.png);
-    background-repeat: no-repeat ;
+    background-image: url(./static/2.png);
+    background-repeat: no-repeat;
     background-size: cover;
     /* background-color: #111; */
     background-repeat: none;
     position: relative;
 }
 
-.aside #backcover{
+.aside #backcover {
     height: 100%;
     width: 100%;
 }
 
-.aside .landingcontain{
+.aside .landingcontain {
     position: relative;
     display: flex;
     justify-content: center;
@@ -39,29 +42,32 @@ model-viewer {
     overflow-x: hidden;
 }
 
-.landingcontain #register{
+.landingcontain #register {
     animation: bounce 2s infinite;
 }
 
-.landingcontain #register:hover{
+.landingcontain #register:hover {
     box-shadow: #110d0d;
 }
 
 
 @keyframes bounce {
-    0%{
+    0% {
         transform: translateY(-5vh);
     }
-    50%{
+
+    50% {
         transform: translateY(5vh);
     }
-    100%{
+
+    100% {
         transform: translateY(-5vh);
     }
-    
+
 }
-.landingcontain img{
-   margin: 20vh;
+
+.landingcontain img {
+    margin: 20vh;
     height: 20vh;
     width: 20vw;
 }
@@ -73,7 +79,7 @@ model-viewer {
     /* background-color: #0c1015; */
 }
 
-.aside p{
+.aside p {
     font-family: Tilt prism;
     font-size: 126px;
     margin: 10px;
@@ -97,39 +103,38 @@ model-viewer {
 /* footer */
 
 .footer {
-    background: url(./stars.png) repeat-y,linear-gradient(180.26deg,#061627 -7.57%,#3d1d3c 143.75%);
+    background: url(./stars.png) repeat-y, linear-gradient(180.26deg, #061627 -7.57%, #3d1d3c 143.75%);
     color: rgb(255, 255, 255);
     text-align: center;
     padding: 2.5em 0;
     width: 100vw;
     font-size: xx-large;
- }
-.footer .outerboxd{
+}
+
+.footer .outerboxd {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.footer .outerboxd .boxd
-{
+
+.footer .outerboxd .boxd {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-.footer .outerboxd .boxd h2
-{
+
+.footer .outerboxd .boxd h2 {
     font-size: 30px;
     width: 10vw;
-   
+
 }
 
-.footer .outerboxd .boxd a
-{
+.footer .outerboxd .boxd a {
     font-size: 20px;
     font-weight: 100;
 }
 
-.footer .outerboxd .boxd p
-{
+.footer .outerboxd .boxd p {
     font-size: 20px;
 }
 
@@ -178,24 +183,34 @@ model-viewer {
         font-size: 1rem;
     }
 
+
+
+    .parallex #moon {
+        height: 51vh;
+        width: 80vw;
+        margin: 20vh 10vw;
+        top: 0px;
+    }
+
 }
 
 .copyright {
     padding: 0.3em 1em;
-  }
+}
+
 .copyright p {
     font-size: 0.6em;
     text-align: center;
-  }
+}
 
-.eventzz{
+.eventzz {
     /* background: url(./stars.png) repeat-y,linear-gradient(180.26deg,#061627 -7.57%,#3d1d3c 143.75%); */
     width: 100vw;
     height: 40vh;
-    
+
 }
 
-.eventzz .titleventz{
+.eventzz .titleventz {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,15 +219,15 @@ model-viewer {
     margin-top: 100px;
 }
 
-.eventzz .eventlist{
+.eventzz .eventlist {
     /* background: url(./stars.png) repeat-y,linear-gradient(180.26deg,#061627 -7.57%,#3d1d3c 143.75%);  */
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
 }
 
-.eventzz .eventlist .eventelement img{
+.eventzz .eventlist .eventelement img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -228,13 +243,14 @@ model-viewer {
 /* facts About me  */
 
 .factz {
-    background: url(./static/stars.png) repeat-y,linear-gradient(180.26deg,#061627 -7.57%,#3d1d3c 143.75%);;
+    background: url(./static/stars.png) repeat-y, linear-gradient(180.26deg, #061627 -7.57%, #3d1d3c 143.75%);
+    ;
     min-height: 100vh;
     overflow: hidden;
-      
+
 }
 
-.factz .abt{
+.factz .abt {
     width: 60vw;
     margin: 10vh 20vw;
     height: 40vh;
@@ -243,31 +259,31 @@ model-viewer {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(225, 225, 225, 0.25);
     border-top: 1px solid rgba(225, 225, 225, 0.5);
-    border-left:1px solid rgba(225, 225, 225, 0.5);
+    border-left: 1px solid rgba(225, 225, 225, 0.5);
     padding: 40px;
     animation: bounce 2s infinite
 }
 
-.factz .abt .abttile{
+.factz .abt .abttile {
     font-weight: bolder;
     font-size: xx-large;
     color: white;
-   
+
 }
 
-.factz .abt .abtbody{
+.factz .abt .abtbody {
     font-size: larger;
     margin-top: 40px;
     color: white;
 }
 
-.factz .eventdes .eventblock .eventtile{
+.factz .eventdes .eventblock .eventtile {
     font-weight: bolder;
     font-size: xx-large;
-    color: white;  
+    color: white;
 }
 
-.factz .eventdes .eventblock .eventbody{
+.factz .eventdes .eventblock .eventbody {
     font-size: larger;
     margin-top: 40px;
     color: white;
@@ -275,12 +291,12 @@ model-viewer {
 
 
 
-.factz .eventenv{
+.factz .eventenv {
     width: 100vw;
     /* margin: 10vh 20vw; */
     height: 50vh;
     /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); */
-    
+
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -288,13 +304,13 @@ model-viewer {
 }
 
 
-.factz .eventenv .eventimg{
+.factz .eventenv .eventimg {
     height: 10vh;
     width: 20vw;
 }
 
 
-.factz .eventblock{
+.factz .eventblock {
     width: 60vw;
     /* margin: 10vh 20vw; */
     height: 40vh;
@@ -303,11 +319,11 @@ model-viewer {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(225, 225, 225, 0.25);
     border-top: 1px solid rgba(225, 225, 225, 0.5);
-    border-left:1px solid rgba(225, 225, 225, 0.5);
+    border-left: 1px solid rgba(225, 225, 225, 0.5);
     padding: 40px;
 }
 
-.factz img{
+.factz img {
     height: 80%;
     /* left: 60%; */
     max-width: 24vw;
@@ -322,7 +338,7 @@ model-viewer {
     /* animation: bounce 2s infinite */
 }
 
-.factz h2{
+.factz h2 {
     width: 50vw;
 }
 
@@ -502,24 +518,24 @@ model-viewer {
 
 
 
-.parallex{
+.parallex {
     position: relative;
     display: flex;
     overflow: hidden;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(#2b1055,#7597de);
+    background: linear-gradient(#2b1055, #7597de);
 }
 
-.parallex h1{
+.parallex h1 {
     font-size: 3em;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     /* letter-spacing: 5px; */
 }
 
-.parallex img{
+.parallex img {
     position: absolute;
     bottom: 0;
     top: 0;
@@ -532,11 +548,101 @@ model-viewer {
     object-fit: cover;
 }
 
-.parallex #moon{
+@media (max-width:600px) {
+    .parallex img {
+        object-fit: cover;
+    }
+
+    .factz .abt {
+        width: 80vw;
+        margin: 10vh 10vw;
+        height: 60vh;
+        padding: 20px;
+    }
+
+    .factz .abt .abttile {
+        font-weight: bolder;
+        font-size: large;
+        color: white;
+    }
+
+    .factz .abt .abtbody {
+        font-size: x-small;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .factz .container {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px 100px;
+        flex-wrap: wrap;
+        padding: 7vh;
+    }
+
+    .factz .eventblock {
+        width: 80vw;
+        margin: 9vh 0vw;
+        height: 58vh;
+        padding:20px
+    }
+    .factz .eventdes .eventblock .eventtile {
+        font-weight: bolder;
+        font-size: large;
+        color: white;
+    }
+
+    .factz .eventdes .eventblock .eventbody {
+        font-size: x-small;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .factz img{
+        visibility: hidden;
+    }
+
+    .factz .eventdes{
+        height: 390vh;
+        width: 100vw;
+    }
+
+    .factz .eventenv {
+        width: 100vw;
+        margin: 15vh 13vw;
+        height: 65vh;
+        /* box-shadow: 0 15px 30px rgb(0 0 0 / 10%); */
+        /* display: flex; */
+        justify-content: space-evenly;
+        align-items: center;
+        /* padding: 40px; */
+    }
+
+    .factz .eventenv img{
+        display: none;
+    }
+
+    .footer .outerboxd .boxd h2 {
+        font-size: 15px;
+        width: 100vw;
+        margin-top: 10px;
+    }
+    .footer .outerboxd .boxd a,p {
+        font-size: 10px;
+        font-weight: 100;
+    }
+    .faq-content{
+        display: none;
+    }
+}
+
+.parallex #moon {
     mix-blend-mode: screen;
 }
 
-.parallex #btn{
+.parallex #btn {
     text-decoration: none;
     display: inline-block;
     padding: 8px 30px;
@@ -549,7 +655,7 @@ model-viewer {
 
 }
 
-.parallex #text{
+.parallex #text {
     position: absolute;
     color: white;
     right: -130px;
@@ -559,13 +665,13 @@ model-viewer {
 }
 
 
-.sec{
+.sec {
     position: relative;
     padding: 100px;
     background: #25335b;
 }
 
-.sec h2{
+.sec h2 {
     color: white;
     font-size: 5vh;
     text-align: center;
@@ -577,12 +683,13 @@ model-viewer {
 }
 
 @media (max-width:500px) {
-    .parallex h1{
+    .parallex h1 {
         font-size: 1em;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-transform: uppercase;
         /* letter-spacing: 5px; */
     }
+
     .sec {
         padding: 30px;
     }
