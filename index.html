@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/33dbf030b9.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/deskof.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/faq.css">
+
+
+    <!--Imports a model-viewer JavaScript code -->
+    <!--It helps to handle how the 3D Object would be displayed -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+</head>
+
+<body>
+    <script>
+        $(window).scroll(function () {
+            var height = $(window).scrollTop();
+            if (height > 100) {
+                $('#back2Top').fadeIn();
+            } else {
+                $('#back2Top').fadeOut();
+            }
+        });
+        $(document).ready(function () {
+            $("#back2Top").click(function (event) {
+                event.preventDefault();
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "slow");
+                return false;
+            });
+
+        });
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        $(document).on("scroll", function () {
+            var pageTop = $(document).scrollTop();
+            var pageBottom = pageTop + $(window).height();
+            var tags = $(".tag");
+
+            for (var i = 0; i < tags.length; i++) {
+                var tag = tags[i];
+
+                if ($(tag).position().top < pageBottom) {
+                    $(tag).addClass("visible");
+                } else {
+                    $(tag).removeClass("visible");
+                }
+            }
+        });
+
+        $(".hover").mouseleave(
+            function () {
+                $(this).removeClass("hover");
+            }
+        );
+
+        function NavBar() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("myTopnav").style.width = "100%";
+                document.getElementById("myTopnav").style.backgroundColor = "rgba(6, 18, 33, 1)";
+                document.getElementById("header").style.position = "fixed";
+                document.getElementById("header").style.top = "0%";
+            } else {
+                document.getElementById("myTopnav").style.width = "80%";
+                document.getElementById("myTopnav").style.backgroundColor = "rgba(6, 18, 33, 0.8)";
+                document.getElementById("header").style.position = "fixed";
+                document.getElementById("header").style.top = "0%";
+            }
+        }
+    </script>
+
+    <header id="header">
+        <div class="topnav" id="myTopnav">
+            <a href="#"><img class="logo" src="./main logo.svg"></a>
+            <a href="#home" style="margin-left: 5%;">Home</a>
+            <a href="#abt" style="margin-left: 5%;">About</a>
+            <!-- <a href="#desk" style="margin-left: 5%;">Desk of</a> -->
+            <a href="./event.html" style="margin-left: 5%;">Events</a>
+            <a href="./Team.html" style="margin-left: 5%;">Team</a>
+            <a href="./sponsers.html" style="margin-left: 5%;">Sponsers</a>
+            <a href="coming.html" style="margin-left: 5%;">Speakers</a>
+            <a href="coming.html" style="margin-left: 5%;">Workshops</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
+        </div>
+    </header>
+
+    <section class="parallex">
+        <img src="./static/2.png" alt="">
+
+        <img src="./static/stars (1).png" alt="" id="stars">
+        <img src="./logo in text.png" alt="" id="moon">
+        <br>
+        <h1 id="btn" style="margin-top:10vh ;">Register Now</h1>
+        <!-- <img src="./rocks11.png" id="m1"> -->
+        <!-- <img src="./trees_02.png" id ="t2"> -->
+        <!-- <img src="./monutain_02.png" id="m2" > -->
+        <!-- <img src="./trees_01.png" id="t1"> -->
+        <!-- <img src="./man.png" id="man"> -->
+        <!-- <img src="./plants.png" id="plants" alt=""> -->
+
+    </section>
+    </div>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+    <!-- My facts -->
+    <section class="factz" id="factz">
+        <div class="abt" id="abt">
+            <div class="abttile">About Solasta</div>
+            <div class="abtbody">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos nemo laboriosam expedita provident
+                    iusto dolor nesciunt! Distinctio, velit magni beatae delectus dicta quasi perferendis magnam ex
+                    saepe rem! Dolores, laboriosam?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem ea
+                    maiores excepturi aliquam non molestias voluptas animi magni sequi, nostrum dolores voluptate minus
+                    ipsam aperiam officia adipisci dolorum optio temporibus!Loreml Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Placeat natus beatae, maxime culpa deserunt repellat magnam quae
+                    ducimus delectus, incidunt perferendis et blanditiis molestiae est eos cum laudantium temporibus
+                    exercitationem.</p>
+            </div>
+        </div>
+        <!-- Desk Of -->
+        <!-- <div class="tag">
+            <div id="desk">
+                <h1 class="desktitle"
+                    style="text-align: center;font-weight: 550;color: white;font-family: sans-serif; margin-bottom: 3%;">
+                    FROM
+                    THE
+                    DESK OF</h1>
+                <!-- <p
+                style="color: white !important;font-family: 'Montserrat', sans-serif;text-align:center;margin-top: 10px;">
+                Explore
+                our amazing events</p> 
+
+                <div class="DeskSec " style="z-index:70">
+
+                    <img src='images/vc.jpeg' class="pics p1 sides border" alt=''>
+
+
+                    <p class="textp t1">
+                        <span class="desig">Vice-chancellor</span><br> Throughout the year we
+                        organise many academic, non-academic programs, conferences, workshops, etc. and invite eminent
+                        experts from national and global platforms. Equilibrio techfest is one such flagship program
+                        which
+                        the institute has organized every year since 2013. It provides a plethora of opportunities for
+                        the
+                        students to showcase their talent by competing with students across the country. It not only
+                        helps
+                        them in honing their professional skills but also imparts social values in them.With the aim of
+                        not
+                        only producing think tanks from our country, Equilibrio nurtures such minds who can challenge
+                        real-life problems and develop solutions for them. Promoting scientific and technological
+                        advancements along with helping to create awareness about various social and environmental
+                        issues
+                        has been Equilibrio’s motto.
+
+
+                    </p>
+
+                    <p class="textp t2"> <span class="desig">Registrar</span><br>Overcoming various challenges, our
+                        college is
+                        encouraging youth to
+                        achieve
+                        brilliance in their fields by showcasing their marvelous ideas and skills in the tech-fest. The
+                        catalytic soft-skills training which Equilibrio offers helps the students to polish their
+                        personalities with tools of preparedness, strategies and guidance by mentors and seniors.
+                        In this festival, students can showcase their creativity and intellect by competing with
+                        students
+                        from different colleges. Engineering is a journey of four years that is incomplete without fun
+                        and
+                        learning. It is truly said that the tech-fest of a college is a resemblance of the college in
+                        itself. I welcome the students to embark on a journey of success guided by our fellow professors
+                        and
+                        the best team equipped with a mountain of experience.
+
+                    </p>
+                    <img src='images/registar.jpeg' class="pics p2  sides border" alt=''>
+
+                    <img src='images/dean.jpeg' class="pics p3  sides border" alt=''>
+
+                    <p class="textp t3"><span class="desig">Dean</span><br>
+                        It's my pleasure to welcome you to the EQUILIBRIO - technical festival &
+                        community. I
+                        hope you will find this festival enthralling, exciting, and invigorating. When I walk
+                        through the corridors of this institute, the enthusiasm of our students captivates me, the
+                        expertise of our staff, and the uniqueness of what we, as an institute, offer our
+                        community makes me feel proud. We work to foster such an environment that is
+                        supportive and encouraging for every stakeholder. I hope you have the same sense of
+                        joyful discovery as you navigate this site. Equilibrio has made a huge foray into the
+                        noble field of science, technology, and management covering from history to the
+                        emerging areas.
+                    </p>
+
+                    <p class="textp t4"><span class="desig">Teacher coordinator</span><br>
+                        The journey of Equilibrio started in 2013 and it has
+                        successfully travelled its destination over the last years. This has been an amazing platform
+                        that
+                        not only assists the students in becoming technically sound but also has a significant role in
+                        adding social values to their life. It provides the students with an opportunity to ameliorate
+                        their
+                        ideas, opinions, perception and make them more inventive.
+                        This event will promote and encourage the interest of the students in coming up with ideas to
+                        solve
+                        real-life problems, be it technical or managerial. With this festival, we not only celebrate
+                        technology but also promote social causes like education, health, clean energy, etc. among the
+                        youth.
+                    </p>
+                    <img src='images/teacher cord.jpg' class="pics p4 sides border" alt=''>
+                </div>
+            </div>
+        </div> -->
+
+
+
+        <div class="container">
+            <h2>A Glimpse of EQUILIBRIO 2022</h2>
+            <div class="box">
+                <div class="shadow"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>Participants <span></span></p>
+                    </div>
+                    <div class="percent" data-text="5000+" data-val="5000" style="--num:85;">
+                        <div class="dot"></div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="shadow"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>Colleges<span></span></p>
+                    </div>
+                    <div class="percent" data-text="100+" style="--num:85;">
+                        <div class="dot"></div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="shadow"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>Prize Pool<span></span></p>
+                    </div>
+                    <div class="percent" data-text="2.5Lakh+" style="--num:85;">
+                        <div class="dot"></div>
+
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="shadow"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>Sponsers<span></span></p>
+                    </div>
+                    <div class="percent" data-text="30+" style="--num:85;">
+                        <div class="dot"></div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="shadow"></div>
+                <div class="content">
+                    <div class="number">
+                        <p>Events<span></span></p>
+                    </div>
+                    <div class="percent" data-text="20+" style="--num:85;">
+                        <div class="dot"></div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="eventdes">
+            <div class="eventenv">
+                <div class="eventblock">
+                    <div class="eventtile">Technical Events </div>
+                    <div class="eventbody">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos nemo laboriosam expedita
+                            provident
+                            iusto dolor nesciunt! Distinctio, velit magni beatae delectus dicta quasi perferendis magnam
+                            ex
+                            saepe rem! Dolores, laboriosam?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Dolorem
+                            ea
+                            maiores excepturi aliquam non molestias voluptas animi magni sequi, nostrum dolores
+                            voluptate
+                            minus
+                            ipsam aperiam officia adipisci dolorum optio temporibus!Loreml Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Placeat natus beatae, maxime culpa deserunt repellat magnam
+                            quae
+                            ducimus delectus, incidunt perferendis et blanditiis molestiae est eos cum laudantium
+                            temporibus
+                            exercitationem.</p>
+                    </div>
+                </div>
+                <img src="./static/52228.jpg" alt="" width="20vw" height="20vh">
+            </div>
+
+            <div class="eventenv">
+                <img src="./static/52134.jpg" alt="" width="20vw" height="20vh">
+                <div class="eventblock">
+                    <div class="eventtile">Non-Technical Events </div>
+                    <div class="eventbody">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos nemo laboriosam expedita
+                            provident
+                            iusto dolor nesciunt! Distinctio, velit magni beatae delectus dicta quasi perferendis magnam
+                            ex
+                            saepe rem! Dolores, laboriosam?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Dolorem
+                            ea
+                            maiores excepturi aliquam non molestias voluptas animi magni sequi, nostrum dolores
+                            voluptate
+                            minus
+                            ipsam aperiam officia adipisci dolorum optio temporibus!Loreml Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Placeat natus beatae, maxime culpa deserunt repellat magnam
+                            quae
+                            ducimus delectus, incidunt perferendis et blanditiis molestiae est eos cum laudantium
+                            temporibus
+                            exercitationem.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="eventenv">
+                <div class="eventblock">
+                    <div class="eventtile">Special Events </div>
+                    <div class="eventbody">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos nemo laboriosam expedita
+                            provident
+                            iusto dolor nesciunt! Distinctio, velit magni beatae delectus dicta quasi perferendis magnam
+                            ex
+                            saepe rem! Dolores, laboriosam?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Dolorem
+                            ea
+                            maiores excepturi aliquam non molestias voluptas animi magni sequi, nostrum dolores
+                            voluptate
+                            minus
+                            ipsam aperiam officia adipisci dolorum optio temporibus!Loreml Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Placeat natus beatae, maxime culpa deserunt repellat magnam
+                            quae
+                            ducimus delectus, incidunt perferendis et blanditiis molestiae est eos cum laudantium
+                            temporibus
+                            exercitationem.</p>
+                    </div>
+                </div>
+                <img src="./static/8294.jpg" alt="" width="20vw" height="20vh">
+            </div>
+
+            <div class="eventenv">
+                <img src="./static/robot.jpg" alt="" width="20vw" height="20vh">
+                <div class="eventblock">
+                    <div class="eventtile">Star Events </div>
+                    <div class="eventbody">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos nemo laboriosam expedita
+                            provident
+                            iusto dolor nesciunt! Distinctio, velit magni beatae delectus dicta quasi perferendis magnam
+                            ex
+                            saepe rem! Dolores, laboriosam?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Dolorem
+                            ea
+                            maiores excepturi aliquam non molestias voluptas animi magni sequi, nostrum dolores
+                            voluptate
+                            minus
+                            ipsam aperiam officia adipisci dolorum optio temporibus!Loreml Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Placeat natus beatae, maxime culpa deserunt repellat magnam
+                            quae
+                            ducimus delectus, incidunt perferendis et blanditiis molestiae est eos cum laudantium
+                            temporibus
+                            exercitationem.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="eventenv">
+                <div class="eventblock">
+                    <div class="eventtile">Robotic Events </div>
+                    <div class="eventbody">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos nemo laboriosam expedita
+                            provident
+                            iusto dolor nesciunt! Distinctio, velit magni beatae delectus dicta quasi perferendis magnam
+                            ex
+                            saepe rem! Dolores, laboriosam?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Dolorem
+                            ea
+                            maiores excepturi aliquam non molestias voluptas animi magni sequi, nostrum dolores
+                            voluptate
+                            minus
+                            ipsam aperiam officia adipisci dolorum optio temporibus!Loreml Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Placeat natus beatae, maxime culpa deserunt repellat magnam
+                            quae
+                            ducimus delectus, incidunt perferendis et blanditiis molestiae est eos cum laudantium
+                            temporibus
+                            exercitationem.</p>
+                    </div>
+                </div>
+                <img src="./static/robot.jpg" alt="" width="20vw" height="20vh">
+            </div>
+
+            <div class="eventenv">
+                <img src="./static/8294.jpg" alt="" width="20vw" height="20vh">
+                <div class="eventblock">
+                    <div class="eventtile">Workshops</div>
+                    <div class="eventbody">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos nemo laboriosam expedita
+                            provident
+                            iusto dolor nesciunt! Distinctio, velit magni beatae delectus dicta quasi perferendis magnam
+                            ex
+                            saepe rem! Dolores, laboriosam?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Dolorem
+                            ea
+                            maiores excepturi aliquam non molestias voluptas animi magni sequi, nostrum dolores
+                            voluptate
+                            minus
+                            ipsam aperiam officia adipisci dolorum optio temporibus!Loreml Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Placeat natus beatae, maxime culpa deserunt repellat magnam
+                            quae
+                            ducimus delectus, incidunt perferendis et blanditiis molestiae est eos cum laudantium
+                            temporibus
+                            exercitationem.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <section>
+            <div class="eventzz">
+                <div class="titleventz">
+                    <h1>Sponsers</h1>
+                </div>
+                <div class="eventlist">
+                    <div class="eventelement">
+                        <img src="./static/img2.png">
+                    </div>
+                    <div class="eventelement">
+                        <img src="./static/3.png">
+                    </div>
+                    <div class="eventelement">
+                        <img src="./static/4.png">
+                    </div>
+                    <div class="eventelement">
+                        <img src="./static/5.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--FAQ-->
+        <div class="container text-center" style="margin-top: 2%;" id="faq">
+            <h1 class="section-title">FAQ's</h1>
+            <div class="faq-content">
+                <div class="tag">
+                    <div class="faq-question">
+                        <input id="q1" type="checkbox" class="panel">
+                        <div class="plus">+</div>
+                        <label for="q1" class="panel-title">What is Equlibrio ? </label>
+                        <div class="panel-content">
+                            <h2>EQUILIBRIO is the technical extravaganza held in Guru
+                                Ghasidas University, Bilaspur. It is a platform to
+                                showcase your talent teaming with spirit and passion.
+                                An amalgamation of technical events and cultural galas
+                                where students can hone their technical and
+                                managerial skills. It provides the students an
+                                opportunity to prove their mettle by competing with
+                                students from top institutes across India.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag">
+                    <div class="faq-question">
+                        <input id="q2" type="checkbox" class="panel">
+                        <div class="plus">+</div>
+                        <label for="q2" class="panel-title">How many teams are there ?</label>
+                        <div class="panel-content">WE HAVE 11 TEAMS
+                            NAMELY ;
+                            OFFICE AND FINANCE,
+                            GRAPHIC DESIGNING,
+                            WEB DEVELOPMENT,
+                            MANAGERIAL TEAM,
+                            CULTURAL TEAM,
+                            HOSPITALITY,
+                            MARKETING TEAM,
+                            PUBLICITY TEAM,
+                            PHOTOGRAPHY,
+                            GAMING TEAM,
+                            AND TECH TEAMS.</div>
+                    </div>
+                </div>
+                <div class="tag">
+                    <div class="faq-question">
+                        <input id="q3" type="checkbox" class="panel">
+                        <div class="plus">+</div>
+                        <label for="q3" class="panel-title">Is the event conducted online/offline mode ?</label>
+                        <div class="panel-content">Equilibrio'22 is conducted completely in online mode keeping all the
+                            circumstances
+                            under consideration &nbsp; <a href="https://en.wikipedia.org/wiki/The_Unanswered_Question"
+                                target="_blank">unanswered</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="outerboxd">
+                <div class="boxd">
+                    <h2>PEEK INTO</h2> 
+                    <a href="#events">Home</a>
+                    <a href="#gallery">About</a>
+                    <a href="#Sponsors">Events</a>
+                </div>
+                <div class="boxd">
+                    <h2>ABOUT</h2> 
+                    <a href="#events">Team</a>
+                    <a href="#gallery">Sponsers</a>
+                    <a href="#Sponsors">Speakers</a>
+                </div>
+                <div class="boxd">
+                    <h2>SOLASTA</h2>
+                    <!-- <a href="#gallery">Awesome series of events, is coming soon to take breath away!</a> -->
+                    <p>Awesome series of events, is coming soon to take breath away!</p>
+                </div>
+            </div>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/janumala-akhilendra/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="janumalaakhilendra01122000@gmail.com">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://facebook.com/JanumalaAkhilendra">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://instagram.com/janumala_akhilendra">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/JanumalaAkhilendra">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="row copyright">
+                <p>Copyright &copy; JanumalaAkhilendra</p>
+            </div>
+        </footer>
+
+    </section>
+
+    <script src="./style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        let stars = document.getElementById("stars");
+        let moon = document.getElementById("moon");
+        let m3 = document.getElementById("m3");
+        let btn = document.getElementById("btn");
+        let regis = document.getElementById("register");
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 0.5 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            regis.style.marginTop = value * 3 + "px";
+        })
+
+
+
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width:1000px)", () => {
+            gsap.from("#m1", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                y: 300,
+            })
+            gsap.from("#m2", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                y: 150,
+            })
+            gsap.from("#t2", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: -50,
+            })
+            gsap.from("#t1", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: 50,
+            })
+            gsap.from("#man", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: -250,
+            })
+            gsap.from("#plants", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: -150,
+            })
+            gsap.from("#text", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: 50,
+            })
+
+        })
+
+        mm.add("(max-width:999px)", () => {
+            gsap.from("#m1", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                y: 18,
+            })
+            gsap.from("#m2", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                y: 14,
+            })
+            gsap.from("#t2", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: -10,
+            })
+            gsap.from("#t1", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: 10,
+            })
+            gsap.from("#man", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: -20,
+            })
+            gsap.from("#plants", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: -18,
+            })
+            gsap.from("#text", {
+                scrollTrigger: {
+                    scrub: true
+                },
+                x: 14,
+            })
+
+        })
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 300,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+                640: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
