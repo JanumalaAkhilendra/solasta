@@ -380,6 +380,30 @@ body:after {
     font-style: 7px;
   }
 
+  #events .container .card .content {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 115px);
+    height: 100%;
+    padding: 20px;
+    left: 0;
+    top: -35px;
+    padding-left: 30px;
+    text-align: inherit;
+    display: block;
+    font-size: 20px;
+  }
+
+  #events .container .row {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: block;
+  }
+
+  #events .container .col-12 {
+    margin: 20vh 10vw;
+    width: 80vw;
+}
 
   #events .container .card {
     width: auto;
@@ -395,14 +419,16 @@ body:after {
 
   #events .container .card .imgBx,
   #events .container .card:hover .imgBx {
-    width: 100%;
+    width: 50%;
     height: 120px;
+    top: -59px;
+    margin: auto;
     left: 0;
   }
 
   #events .container .card .imgBx img,
   #events .container .card:hover .imgBx img {
-    max-width: 100px;
+    max-width: 50px;
   }
 
   #events .container .card .content {
