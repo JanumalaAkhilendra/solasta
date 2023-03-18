@@ -581,6 +581,96 @@ model-viewer {
 }
 
 
+@media (max-width:600px) {
+    .parallex img {
+        object-fit: cover;
+    }
+
+    .factz .abt {
+        width: 80vw;
+        margin: 10vh 10vw;
+        height: 60vh;
+        padding: 20px;
+    }
+
+    .factz .abt .abttile {
+        font-weight: bolder;
+        font-size: large;
+        color: white;
+    }
+
+    .factz .abt .abtbody {
+        font-size: x-small;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .factz .container {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px 100px;
+        flex-wrap: wrap;
+        padding: 7vh;
+    }
+
+    .factz .eventblock {
+        width: 80vw;
+        margin: 9vh 0vw;
+        height: 58vh;
+        padding:20px
+    }
+    .factz .eventdes .eventblock .eventtile {
+        font-weight: bolder;
+        font-size: large;
+        color: white;
+    }
+
+    .factz .eventdes .eventblock .eventbody {
+        font-size: x-small;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .factz img{
+        visibility: hidden;
+    }
+
+    .factz .eventdes{
+        height: 390vh;
+        width: 100vw;
+    }
+
+    .factz .eventenv {
+        width: 100vw;
+        margin: 15vh 13vw;
+        height: 65vh;
+        /* box-shadow: 0 15px 30px rgb(0 0 0 / 10%); */
+        /* display: flex; */
+        justify-content: space-evenly;
+        align-items: center;
+        /* padding: 40px; */
+    }
+
+    .factz .eventenv img{
+        display: none;
+    }
+
+    .footer .outerboxd .boxd h2 {
+        font-size: 15px;
+        width: 100vw;
+        margin-top: 10px;
+    }
+    .footer .outerboxd .boxd a,p {
+        font-size: 10px;
+        font-weight: 100;
+    }
+    .faq-content{
+        display: none;
+    }
+}
+
 
 .parallex {
     position: relative;
