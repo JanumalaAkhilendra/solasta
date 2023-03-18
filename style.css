@@ -10,9 +10,21 @@ model-viewer {
     border: none;
 }
 
+::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 5px;
+}
+
 .body {
-    background: url(./static/stars.png) repeat-y, linear-gradient(180.26deg, #061627 -7.57%, #3d1d3c 143.75%);
-    ;
+    /* background: url(./static/stars.png) repeat-y, linear-gradient(180.26deg, #061627 -7.57%, #3d1d3c 143.75%);
+    ; */
+
+    background-color: black;
 }
 
 .aside {
@@ -106,7 +118,7 @@ model-viewer {
     background: url(./stars.png) repeat-y, linear-gradient(180.26deg, #061627 -7.57%, #3d1d3c 143.75%);
     color: rgb(255, 255, 255);
     text-align: center;
-    padding: 2.5em 0;
+    padding-top: 2.5em;
     width: 100vw;
     font-size: xx-large;
 }
@@ -192,6 +204,27 @@ model-viewer {
         top: 0px;
     }
 
+    .footer .outerboxd {
+        display: flex;
+        margin: 10px;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .footer .outerboxd .boxd h2 {
+        font-size: 20px;
+        width: 50vw;
+        margin: auto;
+    }
+
+    .footer .outerboxd .boxd a {
+        font-size: 10px;
+        font-weight: 100;
+    }
+
+    .footer .outerboxd .boxd p {
+        font-size: 10px;
+    }
+
 }
 
 .copyright {
@@ -204,7 +237,7 @@ model-viewer {
 }
 
 .eventzz {
-    /* background: url(./stars.png) repeat-y,linear-gradient(180.26deg,#061627 -7.57%,#3d1d3c 143.75%); */
+    background: url(./stars.png) repeat-y, linear-gradient(180deg, #061627, #061627);
     width: 100vw;
     height: 40vh;
 
@@ -216,25 +249,28 @@ model-viewer {
     align-items: center;
     color: aqua;
     font-family: 'Font Awesome 5 Brands';
-    margin-top: 100px;
+    padding-top: 100px;
+
 }
 
 .eventzz .eventlist {
-    /* background: url(./stars.png) repeat-y,linear-gradient(180.26deg,#061627 -7.57%,#3d1d3c 143.75%);  */
+    background: url(./stars.png) repeat-y, linear-gradient(180.26deg, #061627 -7.57%, #3d1d3c 143.75%);
     display: flex;
     justify-content: center;
     align-items: center;
+
 
 }
 
 .eventzz .eventlist .eventelement img {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    width: 25vw;
+    width: 80%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
     height: 30vh;
-    opacity: 0.1;
-    background-blend-mode: lighten;
+    padding-bottom: 100px;
 }
 
 
@@ -277,22 +313,50 @@ model-viewer {
     color: white;
 }
 
-.factz .eventdes .eventblock .eventtile {
+.eventdes {
+    /* background: url(./static/stars.png) repeat-y, linear-gradient(180.26deg,#061d3c -7.57% , #061627 143.75%); */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 60vh;
+}
+
+
+
+.eventdes .eventblock .eventtile {
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: x-large;
     color: white;
 }
 
-.factz .eventdes .eventblock .eventbody {
-    font-size: larger;
+.eventdes .eventenv::after {
+    content: '';
+    border: 2px solid aqua;
+    width: 17vw;
+    border-radius: 20px;
+    height: 38vh;
+    position: absolute;
+}
+
+.eventdes .eventenv .eventblock .eventbtn {
+    height: 4vh;
+    width: 8vw;
+    font-weight: bold;
+    color: black;
+    background: aqua;
+}
+
+.eventdes .eventblock .eventbody {
+    font-size: medium;
     margin-top: 40px;
     color: white;
 }
 
 
 
-.factz .eventenv {
-    width: 100vw;
+.eventenv {
+    width: 18vw;
     /* margin: 10vh 20vw; */
     height: 50vh;
     /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); */
@@ -304,13 +368,13 @@ model-viewer {
 }
 
 
-.factz .eventenv .eventimg {
+.eventenv .eventimg {
     height: 10vh;
     width: 20vw;
 }
 
 
-.factz .eventblock {
+.eventblock {
     width: 60vw;
     /* margin: 10vh 20vw; */
     height: 40vh;
@@ -323,7 +387,7 @@ model-viewer {
     padding: 40px;
 }
 
-.factz img {
+.eventdes img {
     height: 80%;
     /* left: 60%; */
     max-width: 24vw;
@@ -343,7 +407,7 @@ model-viewer {
 }
 
 .factz .container {
-    width: 50vw;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -582,36 +646,39 @@ model-viewer {
         padding: 7vh;
     }
 
-    .factz .eventblock {
+    .eventblock {
+        display: block;
         width: 80vw;
         margin: 9vh 0vw;
         height: 58vh;
-        padding:20px
+        padding: 20px
     }
-    .factz .eventdes .eventblock .eventtile {
+
+    .eventdes .eventblock .eventtile {
         font-weight: bolder;
         font-size: large;
         color: white;
     }
 
-    .factz .eventdes .eventblock .eventbody {
+    .eventdes .eventblock .eventbody {
         font-size: x-small;
         margin-top: 10px;
         color: white;
     }
 
-    .factz img{
+    .factz img {
         visibility: hidden;
     }
 
-    .factz .eventdes{
+    .eventdes {
         height: 390vh;
         width: 100vw;
+        display: block;
     }
 
-    .factz .eventenv {
+    .eventenv {
         width: 100vw;
-        margin: 15vh 13vw;
+        margin: 15vh 0;
         height: 65vh;
         /* box-shadow: 0 15px 30px rgb(0 0 0 / 10%); */
         /* display: flex; */
@@ -620,22 +687,66 @@ model-viewer {
         /* padding: 40px; */
     }
 
-    .factz .eventenv img{
+    .eventdes .eventenv::after {
+        content: '';
+        border: 2px solid aqua;
+        width: 80vw;
+        border-radius: 20px;
+        height: 60vh;
+        position: absolute;
+    }
+
+    .eventenv img {
         display: none;
     }
 
-    .footer .outerboxd .boxd h2 {
+    .eventdes .eventblock .eventbody p {
+        font-size: small;
+        margin-top: 40px;
+        color: white;
+    }
+
+
+    .eventdes .eventenv .eventblock .eventbtn {
+        height: 6vh;
+        width: 40vw;
+        margin-top: 10vh;
+        font-weight: bold;
+    }
+
+
+    .outerboxd .boxd h2 {
         font-size: 15px;
         width: 100vw;
         margin-top: 10px;
     }
-    .footer .outerboxd .boxd a,p {
+
+    .outerboxd .boxd a,
+    p {
         font-size: 10px;
         font-weight: 100;
     }
-    .faq-content{
+
+    .faq-content {
         display: none;
     }
+
+    .eventzz .titleventz {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: aqua;
+        font-family: 'Font Awesome 5 Brands';
+        padding-top: 50px;
+    }
+
+    .eventzz .eventlist{
+        background: transparent;
+        /* background: url(./stars.png) repeat-y, linear-gradient(180.26deg, #061627 -7.57%, #3d1d3c 143.75%); */
+        margin: auto;
+        width: 80vw; 
+    }
+
 }
 
 .parallex #moon {
