@@ -644,7 +644,7 @@ model-viewer {
 
     .factz .eventenv {
         width: 100vw;
-        margin: 15vh 13vw;
+        margin: 15vh 0vw;
         height: 65vh;
         /* box-shadow: 0 15px 30px rgb(0 0 0 / 10%); */
         /* display: flex; */
